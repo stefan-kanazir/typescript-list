@@ -23,9 +23,9 @@ function App() {
   ])
 
   return (
-    <div className="App">
-      <h1>Calorie Counter</h1>
-      <p>Recording your calories as you eat gives you a clearer picture of the calories you are consuming. It also enhances your awareness of food values and nutrient levels, all of which helps you make healthier choices when eating.</p>
+    <div className="">
+      <h1 className="">Calorie Counter</h1>
+      <p className="">Recording your calories as you eat gives you a clearer picture of the calories you are consuming. It also enhances your awareness of food values and nutrient levels, all of which helps you make healthier choices when eating.</p>
       
       <section>
         <List food={food}/>
