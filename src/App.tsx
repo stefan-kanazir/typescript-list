@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import List from "./components/List"
+
+interface IState {
+  food: {
+    title: string
+    url: string
+    calories: number
+    description?: string
+  }[]
+}
 
 function App() {
+
+  const [food, setFood] = useState<IState["food"]>([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Calorie Counter</h1>
+      <p>Recording your calories as you eat gives you a clearer picture of the calories you are consuming. It also enhances your awareness of food values and nutrient levels, all of which helps you make healthier choices when eating.</p>
+      
+      <section>
+        <List food={food} />
+      </section>
     </div>
   );
 }
