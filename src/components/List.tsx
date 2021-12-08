@@ -14,13 +14,15 @@ const List: React.FC<IProps> = ({food}) => {
   const renderList = (): JSX.Element[] => {
     return food.map(food => {
       return (
-        <li className="List">
-          <div className="List-header">
-            <img className="List-img" src={food.url} alt={food.title} />
-            <h2>{food.title}</h2>
+        <li className="grid md:grid-cols-3 border-2 border-black p-4">
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <div className="w-32 rounded-full overflow-hidden">
+              <img className="object-cover h-32 w-full" src={food.url} alt={food.title} />
+            </div>
+            <h2 className="md:ml-4 font-bold text-xl">{food.title}</h2>
           </div>
-          <p>{food.calories} cal</p>
-          <p className="List-note">{food.description}</p>
+          <p className="flex items-center justify-center py-4 text-lg">{food.calories} cal</p>
+          <p className="flex items-center justify-center text-center md:text-left">{food.description}</p>
         </li>
       )
     })
