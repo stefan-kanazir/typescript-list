@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import List from "./components/List"
+import AddToList from './components/AddToList';
 
 interface IState {
   food: {
@@ -23,12 +24,16 @@ function App() {
   ])
 
   return (
-    <div className="container mx-auto p-10 min-h-screen">
+    <div className="container mx-auto p-10 min-h-screen max-w-5xl">
       <h1 className="text-3xl text-center font-bold pb-3">Calorie Counter</h1>
       <p className="text-center mb-8">Recording your calories as you eat gives you a clearer picture of the calories you are consuming. It also enhances your awareness of food values and nutrient levels, all of which helps you make healthier choices when eating.</p>
       
       <section>
         <List food={food}/>
+      </section>
+
+      <section>
+        <AddToList />
       </section>
     </div>
   );
